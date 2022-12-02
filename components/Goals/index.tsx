@@ -41,18 +41,18 @@ const CardGoals = ({ backg, children, title }: Props) => {
   return (
     <motion.div
       variants={item}
-      className="flex flex-col items-start w-1/3 border-2 rounded-xl px-4 py-6 gap-y-5 bg-white"
+      className="flex flex-col items-start w-1/3 border-2 rounded-xl px-4 py-6 gap-y-5 bg-white md:w-[45%] md:max-w-full sm:w-full"
     >
       <div
-        className={`w-20 h-20  rounded-lg grid place-content-center`}
+        className={`w-20 h-20  rounded-lg grid place-content-center md:w-16 md:h-16`}
         style={{
           background: `${backg}`,
         }}
       >
         {children}
       </div>
-      <h3 className="font-semibold text-2xl">{title}</h3>
-      <p className="leading-relaxed text-secondary">
+      <h3 className="font-semibold text-2xl md:text-xl">{title}</h3>
+      <p className="leading-relaxed text-secondary md:text-sm">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ex
         consequuntur facilis officiis aspernatur. Fuga, eligendi quod!
       </p>
@@ -62,20 +62,23 @@ const CardGoals = ({ backg, children, title }: Props) => {
 
 export default function Goals() {
   return (
-    <div className="px-20 py-16">
+    <div className="px-20 py-16 md:px-7 sm:px-3">
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
         className="text-center"
       >
-        <motion.h2 variants={item} className="text-5xl font-semibold">
+        <motion.h2
+          variants={item}
+          className="text-5xl font-semibold md:text-3xl sm:text-lg"
+        >
           Achive Your Goals With Us
         </motion.h2>
         <motion.p
           variants={item}
-          className="w-2/3 text-lg font-light mx-auto my-7 leading-loose"
+          className="w-2/3 text-lg font-light mx-auto my-7 leading-loose md:text-base md:leading-normal md:my-4 sm:text-xs sm:w-full"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
           libero? Odit dolore neque cupiditate. Eos at commodi odit cumque
@@ -87,8 +90,8 @@ export default function Goals() {
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.8 }}
-        className="flex justify-between gap-x-7"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex justify-between gap-x-7 md:gap-3 md:flex-wrap md:justify-center"
       >
         <CardGoals backg="#C7F7F9" title="Learn the latest skills">
           <TfiRulerPencil className="w-10 h-10" />

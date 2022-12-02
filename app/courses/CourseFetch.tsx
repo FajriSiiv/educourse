@@ -4,17 +4,6 @@ import MapCourse from "./MapCourse";
 import { AiOutlineLoading } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.3,
-    },
-  },
-};
-
 const Loading = () => {
   return (
     <div className="p-1 w-fit rounded-full bg-primary relative">
@@ -49,14 +38,9 @@ export default function CourseFetch() {
         Course Beginner to Advance
       </h1>
       <div className="flex place-content-center">{loading && <Loading />}</div>
-      <motion.div
-        variants={container}
-        animate="visible"
-        initial="hidden"
-        className="flex flex-wrap gap-x-5 gap-y-10 place-content-between "
-      >
+      <div className="">
         {dataCourse ? <MapCourse dataLooping={dataCourse} /> : null}
-      </motion.div>
+      </div>
     </div>
   );
 }

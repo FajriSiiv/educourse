@@ -2,6 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+===================
+
+# Image Website
+
+Tampilan website~
+![The Website](educourse.png)
+
 First, run the development server:
 
 ```bash

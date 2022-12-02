@@ -22,9 +22,9 @@ const SlideTesti = ({
   personName: string;
 }) => {
   return (
-    <div className="h-[500px] w-full">
+    <div className="h-[500px] w-full sm:h-fit sm:py-8">
       <div className="grid grid-cols-3 h-full gap-x-20">
-        <div className="col-span-1 flex items-start justify-center">
+        <div className="col-span-1 flex items-start justify-center md:hidden ">
           <div className="w-full h-5/6 relative ">
             <Image
               src={personImg}
@@ -33,9 +33,9 @@ const SlideTesti = ({
             />
           </div>
         </div>
-        <div className="col-span-2">
-          <h3 className="text-5xl font-semibold">{personName}</h3>
-          <p className="py-7 text-secondary leading-loose w-5/6">
+        <div className="col-span-2 md:col-span-3 md:w-full">
+          <h3 className="text-5xl font-semibold sm:text-2xl">{personName}</h3>
+          <p className="py-7 text-secondary leading-loose w-5/6 md:w-full md:text-base sm:text-xs">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem a
             voluptas veniam, dolorum eligendi quo laboriosam. Odio, sapiente
             numquam fuga officiis exercitationem iste aut nobis ducimus rerum
@@ -88,7 +88,7 @@ export default function Testimonial() {
     return (
       <button
         onClick={funClick}
-        className="p-3 rounded-full grid place-content-center bg-[#E3E7EB] hover:bg-primary group"
+        className="p-3 rounded-full grid place-content-center bg-[#E3E7EB] hover:bg-primary group sm:p-1"
       >
         {children}
       </button>
@@ -96,13 +96,13 @@ export default function Testimonial() {
   };
 
   return (
-    <div className="px-20 relative">
-      <div className="absolute bottom-10 right-20 z-10 flex gap-x-3">
+    <div className="px-20 relative md:px-7 sm:px-3">
+      <div className="absolute bottom-10 right-20 z-10 flex gap-x-3 sm:right-5 sm:bottom-3">
         <ButtonNav funClick={() => gotoPrev()}>
-          <HiOutlineArrowNarrowLeft className="w-7 h-7 group-hover:text-white" />
+          <HiOutlineArrowNarrowLeft className="w-7 h-7 group-hover:text-white sm:w-4 sm:h-4" />
         </ButtonNav>
         <ButtonNav funClick={() => gotoNext()}>
-          <HiOutlineArrowNarrowRight className="w-7 h-7 group-hover:text-white" />
+          <HiOutlineArrowNarrowRight className="w-7 h-7 group-hover:text-white sm:w-4 sm:h-4" />
         </ButtonNav>
       </div>
       <Slider {...settings} ref={customeSlider}>
